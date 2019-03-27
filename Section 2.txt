@@ -1,0 +1,140 @@
+-----------------------------------------------------------
+    Section 2: AWS Services
+-----------------------------------------------------------
+
+AWS Global Infrastructure:
+  Region: Area Geografis (lokasi fisik)
+  Availability Zones: Data Center di tiap Region
+  Edge Location: cache content, CDN with CLoudFront
+
+Compute:
+  EC2: VM nya AWS
+  EC2 Container Service: Run Docker Container
+  Elastic Beanstalk: Dont understand AWS just upload code, AWS bakal configure secara otomatis buat mereka
+  Lambda: Code yang di upload dan di execute tanpa khawatir underlying machine nya
+  Lightsail: VPS service, kasih server dengan fixed IP address dan bisa ssh
+  Batch: batch computing in Cloud
+
+Storage:
+  S3: ada bucket, upload file ke bucket
+  EFS: NAS, bisa di mount ke VM
+  Glacier: Data Archival
+  Snowball: Large amount of data ke AWS datacenter langsung
+  Storage Gateway: VM storage replikasi di datacenter
+
+Databases:
+  RDS: MySQL, Aurora, PostgreSQL, dll
+  DynamoDB: Non relational Databases
+  Elasticache: caching query from databases
+  Red Shift: Complex query data warehousing
+
+Migration:
+  AWS Migration Hub: Track app saat migrasi ke AWS
+  Application Discovery Service: Automated detection tools untuk aplikasi, tracking dependencies for app
+  Database Migration Service: Database Migration
+  Server Migration Service: Server Migration
+  Snowball: Migrating large amount of data (TB scale)
+
+Network and Content Delivery:
+  VPC: Virtual Private Cloud, virtual datacenter, configure firewall, routing, dll
+  CloudFront: Content Delivery Network, media assets caching, store closer to the user
+  Route53: Amazon DNS Service
+  API Gateway: way of creating API for other services to talk to
+  Direct Connect: Dedicated line from DC to Amazon
+
+Developer Tools -:
+  CodeStar: collaborate developer on particular project
+  CodeCommit: place store your code
+  CodeBuild: run test code
+  CodeDeploy: Deployment service to EC2 instances
+  CodePipeline: automate steps to release software
+  X-Ray: scan for issues in performance bottleneck
+  Cloud9: IDE
+
+Management Tools:
+  CloudWatch: monitoring service
+  CloudFormation: way of scripting infrastructure
+  CloudTrail: Log changes in AWS environment
+  Config: monitor configuration on entire AWS environment, perform backup
+  OpsWorks: use chef and puppet to automate environment
+  Service Catalog: manage catalog of IT services (vm images, etc) used by big organization
+  Systems Manager: interface to manage AWS resources
+  Trusted Advisor: advice around AWS environment
+  Managed Services: managed service by AWS
+
+Media Services -:
+  Elastic Transcoder: takes media and resize for another device or platform
+
+Machine Learning -:
+  SageMaker: use deeplearning
+  Comprehend: sentiment analysis across data
+  DeepLens: detect and recognize object camera
+  Lex: Way of communicating with customer(AI)
+  Machine Learning: entry level than deeplearning, thow dataset to AWS cloud then analyze and predict the outcome
+  Polly: takes text and turn into speech
+  Rekognition: upload file, then tell you what is that file
+  Amazon Translate: Translate languages
+  Amazon Transcribe: automatic speech recognition and turn that into text
+
+Analytics:
+  Athena: SQL query to S3 bucket (spreadsheet, excel) and return result serverless
+  EMR: used for processing large amount of data for analysis
+  CloudSearch: search discussion forum etc.
+  ElasticSearch Service:
+  Kinesis: way of ingesting large amount of data to AWS (hashtag social media, etc)
+  QuickSight:
+  Data Pipeline: moving data between different AWS services
+  Glue: Extract, transform, and loaded
+
+Security & Identity & Compliance:
+  IAM (Identity Access Management): management of users and group etc.
+  Cognito: Way of doing device authentication, request temporary access to AWS resources for mobile devices
+  GuardDuty: moniors malicious activity for AWS account
+  Inspector: Agent to install in VM and run bunch of test and generate report of vulnerability
+  Macie: Scan S3 bucket containing credentials and send alert
+  Certificate Manager: managing SSL Certificate
+  CloudHSM: hardware security module
+  Directory Services: managing microsoft active Directory services to AWS services
+  WAF: Web Application Firewall, looking at the app layer for malicious
+  Shield: DDOS mitigation
+  Artifact: access to AWS report (download sock control) way of downloading and inspecting AWS documemntation
+
+Mobile Services -:
+  Mobile Hub: setup AWS services from mobile
+  Pinpoint: Push notif to mobile user
+  AWS AppSync: automatically update data for online or offline mobile app web application
+  Device Farm: Testing app on real life devices
+  Mobile Analytics: analitics for mobile app
+
+AR/VR -:
+  Sumerian: Virtual reality room
+
+Application integration:
+  Step Functions: managing lambda Functions
+  Amazon MQ: way of doing message queue
+  SNS: notification service(billing alarm, etc.)
+  SQS: decoupling infrastructure, queue
+  SWF: simple workflow
+
+Customer engagement:
+  Connect: call center in cloud,
+  Simple Email Service: sending large amount of email and highly scalable
+
+Business Productivity:
+  Alexa for Business:
+  Chime: Video conference
+  Work Docs: dropbox for AWS
+  Workmail: use email throu amazon like GMail
+
+Desktop & App Streaming:
+  Workspaces: running OS on AWS cloud and stream to device
+  AppStream 2.0: streaming actual app in the cloud live to device
+
+Internet of Things:
+  iOT: devices sending information
+  iOT Device Management: managing iOT
+  Amazon FreeRTOS: operating system for microcontroller
+  Greengrass: software that run data caching, machine learing, etc to devices
+
+Game Development:
+  GameLift: helps to develop game (VR/AR) on cloud

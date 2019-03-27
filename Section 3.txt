@@ -1,0 +1,38 @@
+-----------------------------------------------------------
+    Section 3: IAM (Identity Access Management)
+-----------------------------------------------------------
+
+IAM : manage users and their levels of privilleges
+Functions:
+  - Centralised control account
+  - Shared access to AWS account
+  - Granular Permission
+  - Identity Federation
+  - Multifactor Authentication
+  - Provide Temporary access to devices
+  - Set up password rotation policies
+
+Terms:
+  Users - End Users (people)
+  Groups - Collection of users under one set of Permission
+  Roles - role of users or Groups of AWS resources
+  Policies - Document of permission in form of json
+       {
+        "Version": "2012-10-17",
+        "Statement":
+        [
+          {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+          }
+        ]
+       }
+
+Important Things:
+  IAM is UNIVERSAL. not apply to any region
+  "root account" is the account created when first registered. has Admin Access
+  New users have NO permissions by default
+  New users assigned Access Key ID & Secret Access Key when first created
+  This are not the same as a password, cannot used to Login to the console. Used only to access AWS via APIs and Command Line
+  Always setup MFA on root account
