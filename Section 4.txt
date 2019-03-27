@@ -1,0 +1,91 @@
+-----------------------------------------------------------
+    Section 4: AWS Simple Storage System (S3)
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+    4.1: S3 101
+-----------------------------------------------------------
+
+What is S3:
+  S3 is safe place to store files
+  Object Storage type (only metadata store in datacenter)
+    object: vieos, photos, etc (flat files)
+    block: hardware-like storage for OS or VM
+  Data is pread across multiple devices and facilities
+
+Dummies:
+  S3 is Object based
+  Files can be from 0 - 5 TB in size
+  Unlimited Storage
+  Files stored in Buckets (like folder)
+  S3 name must be unique
+  https://s3-<region>.amazonaws.com/<name>
+  Return HTTP 200 Response if the upload succeed
+
+Data Consistency:
+  Read after write consistency for PUTS of new Objects
+    (immediate consistency, able to read immediately after upload new file)
+  Eventual Consistency for overwrite PUTS and DELETES
+    (have delay for updating Objects, bcs objects are spreads across facilities)
+  Atomic: Only get either new or old data. NOT be able to get partial or corrupted data
+
+Mechanism:
+  S3 is Object based. Consist of the following:
+    - Key (name of the object)
+      Sort object in alphabetical order
+      (ex. Log data contains name and time, add random letter in the beginning of object so the object are spread evenly)
+    - Value (data made up of a sequence of bytes)
+    - Version ID (for versioning)
+    - Metadata (data about data (date uploaded the files, etc.))
+    - Subresources (eist underneath of object)
+      - Access Control List (ACL) : who can access the object
+      - Torrent : Support bitTorrent Protocol
+
+Basics:
+  - Built for 99.99% availability for S3
+  - Amazon Guarantee 99.9% availability (SLA)
+  - Amazon Guarantee 11x9's durability
+  - Tiered Storage
+  - Lifecycle Management
+  - Versioning
+  - Encryption
+  - Secure data using ACL and Bucket Policies
+
+Storage Tier/Classes:
+  S3
+    - 99.99% availability
+    - 99.999999999% durability
+    - stored redundantly, sustain the loss of 2 facilities concurrently
+
+  S3-IA (Infrequently Accessed)
+    - For data which accessed less frequently but requires rapid access when needed
+    - Minimum Storage duration 30days
+
+  RRS(Reduced Redundancy Storage)
+    - 99.99% durability
+    - 99.99% availability
+    - 1 concurently facility fault tolerant
+
+  Glacier
+    - Used for archival only
+    - Takes 3-5 hours to restore data from Glacier
+    - Very cheap!
+    - $0.01 per gigabytes per month
+    - Minimum Storage duration 90days
+
+Charges:
+  - Storage (how much data stored)
+  - Requests (how many request of data)
+  - Storage Management Pricing
+    (add task to, ex. for HR, Dev, etc.)
+  - Data Transfer Pricing
+    (data coming to s3 free, move to another will be charge for replication)
+  - Transfer Acceleration
+    (fast, easy, and secure transfer between end user and S3 bucket)
+    (ex. user in Japan, New zealand but Buckets in London, instead of uploading to bucket, user upload to edge location
+     that are much closer to the user, and have networking between edge location and bucket )
+
+-----------------------------------------------------------
+    4.2:
+-----------------------------------------------------------
+
