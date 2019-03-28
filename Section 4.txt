@@ -9,7 +9,7 @@
 What is S3:
   S3 is safe place to store files
   Object Storage type (only metadata store in datacenter)
-    object: vieos, photos, etc (flat files)
+    object: videos, photos, etc (flat files)
     block: hardware-like storage for OS or VM
   Data is pread across multiple devices and facilities
 
@@ -86,6 +86,35 @@ Charges:
      that are much closer to the user, and have networking between edge location and bucket )
 
 -----------------------------------------------------------
-    4.2:
+    4.2: Lab (Creating an S3 Bucket)
 -----------------------------------------------------------
+Create S3 Bucket:
+  - Bucket are a universal namespace (unique)
+  - Upload an object to S3 and receive HTTP 200 Code (Upload Success)
+  - Encryption
+    - Client Side Encryption
+    - Server Side Encryption
+      - Amazon S3 Managed Keys (SSE-S3)
+      - KMS (SSE-KMS)
+      - Customer Provided Keys (SSE-C) (provide own keys)
+  - Control access to ubckest using ACL or Bucket Policies
+  - Buckets and objects stored inside are private by default
+
+-----------------------------------------------------------
+    4.3: Lab (Version Control)
+-----------------------------------------------------------
+Versioning:
+  - Stores all versions of an object (including all writes and deletes)
+  - Is a great backup tool
+  - Once enable, versioning cannot be disabled, it can only be suspended
+  - Integrates with Lifecycles rules
+  - Has MFA delete capability
+
+-----------------------------------------------------------
+    4.4: Lab (Cross Region Replication)
+-----------------------------------------------------------
+Cross Region Replication:
+  -
+
+
 
